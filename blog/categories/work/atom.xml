@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Work | My Octopress Blog]]></title>
   <link href="http://maxbucknell.github.io/blog/categories/work/atom.xml" rel="self"/>
   <link href="http://maxbucknell.github.io/"/>
-  <updated>2014-03-06T22:42:46+00:00</updated>
+  <updated>2014-03-06T22:48:17+00:00</updated>
   <id>http://maxbucknell.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -31,18 +31,19 @@ end assets. The problem is that it&rsquo;s <strong>terrible</strong>. Further, f
 size we make in the time frames we make them in, that just isn&rsquo;t practical.
 This is made even more problematic by the fact that Magento is extremely
 modular, and including any module on any page will necessitate more JavaScript
-being added to the page.</p>
+being added to the page. Any attempt at a build stage has to take place on the
+back end, and it has to be automatic.</p>
 
-<p>Before I begin ripping into our way of life, I want to make it clear that this
-is not really anyone&rsquo;s fault. I&rsquo;m certainly not throwing blame here, and I
-don&rsquo;t want it to be interpreted that way. Magento is getting a bit long in the
-tooth now, and I don&rsquo;t want it to be left behind. Most of its JavaScript was
-written in 2007 by PHP developers, and it shows. It&rsquo;s even using an outdated
-style of Prototype code.</p>
+<p>Now, I&rsquo;m going to be critical here. Before I begin ripping into our way of life,
+I want to make it clear that this is not really anyone&rsquo;s fault. I&rsquo;m certainly
+not throwing blame here, and I don&rsquo;t want it to be interpreted that way. Magento
+is getting a bit long in the tooth now, and I don&rsquo;t want it to be left behind.
+Most of its JavaScript was written in 2007 by PHP developers, and it shows. It&rsquo;s
+even using an outdated style of Prototype code.</p>
 
-<p>It would be bad for all involved if Magento got left behind because the front
+<p>It would be bad for all involved if Magento gets left behind because the front
 end was behind the times. And while Magento 2 may fix a lot of these things,
-the fact remains that in 2014, Magento 2 is still a pipe dream, although that&rsquo;s
+the fact remains that in 2014, Magento 2 is still a pipe dream. Although, that&rsquo;s
 a topic for another time.</p>
 
 <h3>What&rsquo;s Wrong With the Status Quo?</h3>
