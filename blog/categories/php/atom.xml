@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://maxbucknell.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: PHP | My Octopress Blog]]></title>
+  <link href="http://maxbucknell.github.io/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://maxbucknell.github.io/"/>
   <updated>2014-03-06T22:42:46+00:00</updated>
   <id>http://maxbucknell.github.io/</id>
@@ -143,18 +143,16 @@ my script.</p>
 
 <p>As for what kind of custom transport format, I&rsquo;m thinking something like this:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//@require js/prototype/validation.js</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">!</span><span class="kd">function</span> <span class="nx">validatePersonalisationOptions</span> <span class="p">(</span><span class="nx">deps</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// do stuff    </span>
-</span><span class='line'><span class="p">}()</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```javascript</p>
 
+<pre><code>//@require js/prototype/validation.js
+
+!function validatePersonalisationOptions (deps) {
+    // do stuff 
+}()
+</code></pre>
+
+<p>```</p>
 
 <p>Of course, the IIFE at the bottom is completely optional. This would reduce
 refactoring all of Magento&rsquo;s JavaScript to a few comments in the core files,
@@ -193,22 +191,18 @@ of this has tripped me up a little bit, though.</p>
 that&rsquo;s been deprecated, so I&rsquo;m going to not use it. I&rsquo;m thinking that if I
 transform scripts from the above form into something like</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">!</span><span class="kd">function</span> <span class="nx">registerExternalVars</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/* JSON */</span> <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">!</span><span class="kd">function</span> <span class="nx">validatePersonalisationOptions</span> <span class="p">(</span><span class="nx">deps</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="c1">// do stuff</span>
-</span><span class='line'>  <span class="p">}();</span>
-</span><span class='line'><span class="p">}();</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```javascript</p>
 
+<pre><code>!function registerExternalVars () {
+    var foo = { /* JSON */ };
+
+    !function validatePersonalisationOptions (deps) {
+        // do stuff
+    }();
+}();
+</code></pre>
+
+<p>```</p>
 
 <p>Notice that I&rsquo;m using the module transport specified above. This isn&rsquo;t strictly
 necessary, but if you&rsquo;re planning on exporting any globals, you probably want
