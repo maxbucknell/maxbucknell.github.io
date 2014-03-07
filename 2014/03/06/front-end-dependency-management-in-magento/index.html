@@ -1,24 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: PHP | My Octopress Blog]]></title>
-  <link href="http://maxbucknell.github.io/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://maxbucknell.github.io/"/>
-  <updated>2014-03-06T22:48:17+00:00</updated>
-  <id>http://maxbucknell.github.io/</id>
-  <author>
-    <name><![CDATA[Your Name]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Front End Dependency Management in Magento - Max's Thoughts</title>
+  <meta name="author" content="Your Name">
 
   
-  <entry>
-    <title type="html"><![CDATA[Front End Dependency Management in Magento]]></title>
-    <link href="http://maxbucknell.github.io/blog/2014/03/06/front-end-dependency-management-in-magento/"/>
-    <updated>2014-03-06T20:54:21+00:00</updated>
-    <id>http://maxbucknell.github.io/blog/2014/03/06/front-end-dependency-management-in-magento</id>
-    <content type="html"><![CDATA[<p>For a while now, I&rsquo;ve been wanting to develop a system for managing front end
+  <meta name="description" content="For a while now, I&rsquo;ve been wanting to develop a system for managing front end
+dependencies for the sites we make at work. It may seem obvious &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://maxbucknell.github.io/2014/03/06/front-end-dependency-management-in-magento">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Max's Thoughts" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Max's Thoughts</a></h1>
+  
+    <h2>Mathematics student by day, Magento developer by night.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:maxbucknell.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Front End Dependency Management in Magento</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-06T20:54:21+00:00" pubdate data-updated="true">Mar 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>For a while now, I&rsquo;ve been wanting to develop a system for managing front end
 dependencies for the sites we make at work.</p>
 
 <p>It may seem obvious to use Grunt with some build stage, glomming AMDs together
@@ -41,11 +115,6 @@ is getting a bit long in the tooth now, and I don&rsquo;t want it to be left beh
 Most of its JavaScript was written in 2007 by PHP developers, and it shows. It&rsquo;s
 even using an outdated style of Prototype code.</p>
 
-<p>It would be bad for all involved if Magento gets left behind because the front
-end was behind the times. And while Magento 2 may fix a lot of these things,
-the fact remains that in 2014, Magento 2 is still a pipe dream. Although, that&rsquo;s
-a topic for another time.</p>
-
 <h3>What&rsquo;s Wrong With the Status Quo?</h3>
 
 <p>Magento&rsquo;s layout has a system for inserting scripts, but only in the <code>&lt;head&gt;</code>
@@ -55,8 +124,8 @@ page will block the display of actual content.</p>
 <p>There is a second method, which combines all scripts loaded into one file before
 it dispatches. This is a preference in the admin section of Magento, and it
 certainly helps. It&rsquo;s nonideal, though, because, we might not want to condense
-things into one file. Sure, that reduces HTTP requests, but that is <a href="http://blog.getify.com/obsessions-http-request-reduction/">not
-necessarily the goal</a>. The goal is a shorter load speed.</p>
+things into one file. Sure, that reduces HTTP requests, but that is
+<a href="http://blog.getify.com/obsessions-http-request-reduction/">not necessarily the goal</a>. The goal is a shorter load speed.</p>
 
 <p>We might not want to condense things into one file because we are loading the
 Prototype library on every page, but it&rsquo;s not going to ever be cached on the
@@ -144,16 +213,18 @@ my script.</p>
 
 <p>As for what kind of custom transport format, I&rsquo;m thinking something like this:</p>
 
-<p>```javascript</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">//@require js/prototype/validation.js</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">!</span><span class="kd">function</span> <span class="nx">validatePersonalisationOptions</span> <span class="p">(</span><span class="nx">deps</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// do stuff    </span>
+</span><span class='line'><span class="p">}()</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>//@require js/prototype/validation.js
-
-!function validatePersonalisationOptions (deps) {
-    // do stuff 
-}()
-</code></pre>
-
-<p>```</p>
 
 <p>Of course, the IIFE at the bottom is completely optional. This would reduce
 refactoring all of Magento&rsquo;s JavaScript to a few comments in the core files,
@@ -192,18 +263,22 @@ of this has tripped me up a little bit, though.</p>
 that&rsquo;s been deprecated, so I&rsquo;m going to not use it. I&rsquo;m thinking that if I
 transform scripts from the above form into something like</p>
 
-<p>```javascript</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">!</span><span class="kd">function</span> <span class="nx">registerExternalVars</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/* JSON */</span> <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">!</span><span class="kd">function</span> <span class="nx">validatePersonalisationOptions</span> <span class="p">(</span><span class="nx">deps</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// do stuff</span>
+</span><span class='line'>  <span class="p">}();</span>
+</span><span class='line'><span class="p">}();</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>!function registerExternalVars () {
-    var foo = { /* JSON */ };
-
-    !function validatePersonalisationOptions (deps) {
-        // do stuff
-    }();
-}();
-</code></pre>
-
-<p>```</p>
 
 <p>Notice that I&rsquo;m using the module transport specified above. This isn&rsquo;t strictly
 necessary, but if you&rsquo;re planning on exporting any globals, you probably want
@@ -219,7 +294,82 @@ the outside.</p>
 
 <p>So, there we have it. I finally wrote down what I thought about JavaScript in
 Magento.</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-06T20:54:21+00:00" pubdate data-updated="true">Mar 6<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='//categories/javascript/'>JavaScript</a>, <a class='category' href='//categories/magento/'>Magento</a>, <a class='category' href='//categories/php/'>PHP</a>, <a class='category' href='//categories/tech/'>Tech</a>, <a class='category' href='//categories/work/'>Work</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

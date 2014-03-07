@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tech | My Octopress Blog]]></title>
-  <link href="http://maxbucknell.github.io/blog/categories/tech/atom.xml" rel="self"/>
+  <title><![CDATA[Category: PHP | Max's Thoughts]]></title>
+  <link href="http://maxbucknell.github.io//categories/php/atom.xml" rel="self"/>
   <link href="http://maxbucknell.github.io/"/>
-  <updated>2014-03-06T22:48:17+00:00</updated>
+  <updated>2014-03-07T11:14:41+00:00</updated>
   <id>http://maxbucknell.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
-    
+    <email><![CDATA[me@maxbucknell.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Front End Dependency Management in Magento]]></title>
-    <link href="http://maxbucknell.github.io/blog/2014/03/06/front-end-dependency-management-in-magento/"/>
+    <link href="http://maxbucknell.github.io/2014/03/06/front-end-dependency-management-in-magento/"/>
     <updated>2014-03-06T20:54:21+00:00</updated>
-    <id>http://maxbucknell.github.io/blog/2014/03/06/front-end-dependency-management-in-magento</id>
+    <id>http://maxbucknell.github.io/2014/03/06/front-end-dependency-management-in-magento</id>
     <content type="html"><![CDATA[<p>For a while now, I&rsquo;ve been wanting to develop a system for managing front end
 dependencies for the sites we make at work.</p>
 
@@ -41,11 +41,6 @@ is getting a bit long in the tooth now, and I don&rsquo;t want it to be left beh
 Most of its JavaScript was written in 2007 by PHP developers, and it shows. It&rsquo;s
 even using an outdated style of Prototype code.</p>
 
-<p>It would be bad for all involved if Magento gets left behind because the front
-end was behind the times. And while Magento 2 may fix a lot of these things,
-the fact remains that in 2014, Magento 2 is still a pipe dream. Although, that&rsquo;s
-a topic for another time.</p>
-
 <h3>What&rsquo;s Wrong With the Status Quo?</h3>
 
 <p>Magento&rsquo;s layout has a system for inserting scripts, but only in the <code>&lt;head&gt;</code>
@@ -55,8 +50,8 @@ page will block the display of actual content.</p>
 <p>There is a second method, which combines all scripts loaded into one file before
 it dispatches. This is a preference in the admin section of Magento, and it
 certainly helps. It&rsquo;s nonideal, though, because, we might not want to condense
-things into one file. Sure, that reduces HTTP requests, but that is <a href="http://blog.getify.com/obsessions-http-request-reduction/">not
-necessarily the goal</a>. The goal is a shorter load speed.</p>
+things into one file. Sure, that reduces HTTP requests, but that is
+<a href="http://blog.getify.com/obsessions-http-request-reduction/">not necessarily the goal</a>. The goal is a shorter load speed.</p>
 
 <p>We might not want to condense things into one file because we are loading the
 Prototype library on every page, but it&rsquo;s not going to ever be cached on the
