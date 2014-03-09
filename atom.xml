@@ -4,10 +4,10 @@
   <title><![CDATA[Max's Thoughts]]></title>
   <link href="http://maxbucknell.github.io/atom.xml" rel="self"/>
   <link href="http://maxbucknell.github.io/"/>
-  <updated>2014-03-07T11:14:41+00:00</updated>
+  <updated>2014-03-09T20:39:16+00:00</updated>
   <id>http://maxbucknell.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Max Bucknell]]></name>
     <email><![CDATA[me@maxbucknell.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Front End Dependency Management in Magento]]></title>
-    <link href="http://maxbucknell.github.io/2014/03/06/front-end-dependency-management-in-magento/"/>
+    <link href="http://maxbucknell.github.ioblog/2014/03/06/front-end-dependency-management-in-magento/"/>
     <updated>2014-03-06T20:54:21+00:00</updated>
-    <id>http://maxbucknell.github.io/2014/03/06/front-end-dependency-management-in-magento</id>
+    <id>http://maxbucknell.github.ioblog/2014/03/06/front-end-dependency-management-in-magento</id>
     <content type="html"><![CDATA[<p>For a while now, I&rsquo;ve been wanting to develop a system for managing front end
 dependencies for the sites we make at work.</p>
 
